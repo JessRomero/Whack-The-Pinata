@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', Calibri;
+}
+
+body {
+    background-color: aqua;
+    background-image: url(images/Tree.png);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-position: center;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, purple, magenta, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 60px;
+    font-size: 80px;
+    -webkit-text-stroke: 3px darkslategray;
+}
+
+p {
+    margin: 10px;
+    font-size: 20px;
+    color: darkviolet;
+}
+
+h4 {
+    margin: 10px;
+    font-size: 20px;
+    color: olivedrab;
+}
+
+.answer {
+    margin: 10px;
+    font-size: 20px;
+    color: olivedrab;
+}
+
+.lives {
+    margin: 10px;
+    font-size: 15px;
+    color: darkviolet;
+}
+
+.win {
+    font-weight: bold;
+    font-size: 40px;
+    background: repeating-linear-gradient(-45deg,  red, yellow, green, blue, purple, magenta, violet);
+    animation: slide 10s linear infinite forwards;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes slide {
+    0% {
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 600vw;
+    }
+}
+
+
+.lose {
+    font-weight: bold;
+    font-size: 40px;
+    background: repeating-linear-gradient(-45deg,  red, yellow, green, blue, purple, magenta, violet);
+    animation: slide 10s linear infinite forwards;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes slide {
+    0% {
+        background-position-x: 0%;
+    }
+    100%{
+        background-position-x: 600vw;
+    }
+}
+
+button {
+    margin: 5px;
+    border-radius: 50%;
+    padding: 5px 25px;
+    display:inline;
+    background-color: teal;
+    color: white;
+}
+
+.pinata {
+    position: relative;
+    left: 225px;
+    max-width: 250px;
+}
+
+.broken {
+    position: relative;
+    left: 225px;
+    max-width: 250px;
+}
