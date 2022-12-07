@@ -20,7 +20,8 @@ To play the game, use to the provided clue to guess the missing word. There are 
 
 ## Screenshots
 ![Screen Shot 2022-12-06 at 6 14 06 PM](https://user-images.githubusercontent.com/116606658/206202232-9a6b2a06-d3f1-4f35-b04e-71728cbcf8b3.png)
-![Screen Shot 2022-12-06 at 6 14 33 PM](https://user-images.githubusercontent.com/116606658/206202238-59a60aaa-034d-48d9-999e-9e45c302c0ff.png)
+![Screen Shot 2022-12-06 at 6 14 33 PM](https://user-images.githubusercontent.com/116606658/206202238-59a60aaa-034d-48d9-999e-9e45c302c0ff.png)![Screen Shot 2022-12-07 at 8 00 16 AM](https://user-images.githubusercontent.com/116606658/206228551-7f69aff3-cc6e-4f24-9e57-eb026c144641.png)
+
 
 
 ## Wireframe
