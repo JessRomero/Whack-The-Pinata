@@ -79,8 +79,8 @@ function checkWin() {
         document.getElementById("winLose").innerHTML = "YOU LOSE!";
     } else if (renderArr.join("") === word) {
         document.getElementById("winLose").innerHTML = "YOU WIN!";
-        document.getElementById("pinata").style.visibility = "hidden";
-        document.getElementById("broken").style.visibility = "visible";
+        document.getElementById("pinata").style.display = "none";
+        document.getElementById("broken").style.display = "block";
     }
 }
 checkWin();
