@@ -6,58 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whack-the-Pinata</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css">
     <script defer src="main.js"></script>
 </head>
 
 <body>
-    <div class="game">
-        <h1 class="rainbow">Whack The Pinata</h1>
-        <p><b>GAME PLAY:<br>Using the provided clue guess the hidden word. You have six guesses to get the correct word!</p></b></br>
-        </p>
-        <div class="lives">Lives Used: <span id="wrong">0</span> of <span id="maxWrong">6</span></div>
-
-        <div id="alphabet">
-            <!-- <button class="btn">A</button>
-            <button class="btn">B</button>
-            <button class="btn">C</button>
-            <button class="btn">D</button>
-            <button class="btn">E</button>
-            <button class="btn">F</button>
-            <button class="btn">G</button>
-            <button class="btn">H</button>
-            <button class="btn">I</button>
-            <button class="btn">J</button>
-            <button class="btn">K</button>
-            <button class="btn">L</button>
-            <button class="btn">M</button>
-            <button class="btn">N</button>
-            <button class="btn">O</button>
-            <button class="btn">P</button>
-            <button class="btn">Q</button>
-            <button class="btn">R</button>
-            <button class="btn">S</button>
-            <button class="btn">T</button>
-            <button class="btn">U</button>
-            <button class="btn">V</button>
-            <button class="btn">W</button>
-            <button class="btn">X</button>
-            <button class="btn">Y</button>
-            <button class="btn">Z</button> -->
-               
+    <div class="flexbox-container">
+        <div class="game">
+            <h1 class="rainbow">Whack The Pinata</h1>
+            <p><b><u>GAME PLAY:</u><br>Using the provided clue guess the hidden word. You have four lives, choose wisely!</b></br></p>
+            <div id="lives">Lives = 4</div>
+            <div id="alphabet"></div>
         </div>
+        <h4>You can't have a party without...
+            <div id="winLose"></div>
+            <div id="randomWord"></div>
+            <div id="images">
+                </style><img src="images/Tree&Pinata.png" id="pinata">
+                <img src="images/Tree&Broken.png" id="broken" style="visibility: hidden">
+            </div>
+        </h4>
     </div>
-
-        <h4>You can't have a party without...</h4>
-        <div class="answer"><b>_ _ _ _</b></div>
-
-    <div class="notifications">
-        <div class="win">YOU WIN!</div>
-        <div class="lose">YOU LOSE!</div>
     </div>
-<!-- <div> <img src="images/Pinata.png" class="pinata"></div> -->
-<div> <img src="images/Broken-Pinata.png" class="broken"></div>
 </body>
-
 </html>

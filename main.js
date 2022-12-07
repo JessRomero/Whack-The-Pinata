@@ -1,69 +1,18 @@
-/*----- constants -----*/
-
-// const win = document.querySelector("win")
-// const lose = document.querySelector("lose")
-// const alphabet = document.querySelector("alphabet")
-// const notifications = document.querySelector("notifications")
-// const results = document.querySelector("results")
+const win = document.getElementById("win")
+const lose = document.getElementById("lose")
+const alphabet = document.getElementById("alphabet")
+const randomWordEl = document.getElementById("randomWord");
+const livesDiv = document.getElementById("lives")
 
 
+let lives = 4;
 
-/*----- app's state (variables) -----*/
-
-let answer = "cake";
-let maxWrong = 6;
-let mistakes = 0;
-let guessed = [];
-let correct = null;
-
-
-
-
-/*----- cached element references -----*/
-
-/*----- event listeners -----*/
-// window.addEventListener("resize", resizeGame, false); //for background resizing //
-// window.addEventListener("orientationchange", resizeGame, false); // for background resizing //
-
-
-/*----- functions -----*/
-
-
-
-/* Background resizing 
-function resizeGame() {
-    let gameArea = document.getElementById("gameArea");
-    let ratio = 4 / 3;
-    let newWidth = window.innerHeight;
-    let newHeight = window.innerHeight;
-    let newRatio = newWidth / newHeight;
-
-    if (newRation > ratio) {
-        newWidth = newHeight * ratio;
-        gameArea.style.height = newHeight + "px";
-        gameArea.style.width = newWidth + "px";
-    } else {
-       newHeight = newWidth / ratio;
-       gameArea.style.width = newWidth + "px";
-       gameArea.style.height = newHeight + "px"; 
-    }
-
-    gameArea.style.marginTop = (-newHeight / 2) + "px";
-    gameArea.style.marginLeft = (-newWidth / 2) + "px";
-
-    let canvas = document.getElementById("canvas");
-    canvas.width = newWidth;
-    canvas.height = newHeight;
-}
-*/
-
-
-function correctAnswer () {
-    answer = "cake";
+const decreaseLives = function () {
+    lives--
+    livesDiv.textContent = `Lives = ${lives}`
 }
 
-
-function generateButtons() { // lets code by DRY //
+function generateButtons() {
     let buttons = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map(letter =>
         `
             <button
@@ -80,29 +29,58 @@ function generateButtons() { // lets code by DRY //
 
 generateButtons();
 
+const word = "CAKE"
+const renderArr = []
+for (let i = 0; i < word.length; i++) {
+    renderArr.push("_")
+}
+functionRender(renderArr.join(" "))
 
-function guess(chosenLetter) {
-    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
-    document.getElementById(chosenLetter).setAttribute("disabled", true);
+function recordGuess() {
+    let pickLetter
+    $("#alphabet").on("click", "button", function (e) {
+        pickLetter = e.target.id
+        $(this).fadeOut(1000, function () {
+            $(this).remove();
+        })
 
-    if (answer.indexOf(chosenLetter) >= 0) {
-        answer();
-        checkIfGameWon();
-    } else if (answer.indexOf(chosenLetter) === -1) {
-        wrong++;
-        updateWrong();
-        checkIfGameLost();
-        brokenPinata();
-    }
+        const isIncluded = word.includes(pickLetter);
+        if (isIncluded) {
+            const idxArr = []
+            for (let i = 0; i < word.length; i++) {
+                if (word[i] === pickLetter) {
+                    idxArr.push(i)
+                }
+            }
+
+            renderArr.forEach(function (empty, idx) {
+                if (idxArr.includes(idx)) {
+                    renderArr[idx] = pickLetter;
+                }
+            })
+            functionRender(renderArr.join(" "));
+            checkWin();
+        } else {
+            decreaseLives();
+            checkWin();
+        }
+    });
+    return pickLetter;
 }
 
+recordGuess();
 
+function functionRender(string) {
+    randomWordEl.textContent = string
+}
 
-
-
-$("#alphabet").on('click', 'button', function(e) {
-    $(this).fadeOut(1000, function() {
-        $(this).remove();
-    })
-  });
-  
+function checkWin() {
+    if (lives === 0 && word != renderArr.join("")) {
+        document.getElementById("winLose").innerHTML = "YOU LOSE!";
+    } else if (renderArr.join("") === word) {
+        document.getElementById("winLose").innerHTML = "YOU WIN!";
+        document.getElementById("pinata").style.visibility = "hidden";
+        document.getElementById("broken").style.visibility = "visible";
+    }
+}
+checkWin();
