@@ -8,6 +8,7 @@ A fun and colorful version of hangman.
 - HTML
 - CSS
 - JavaScript
+- jQuery
 
 ## Getting Started
 
